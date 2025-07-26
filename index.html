@@ -3,25 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patates Stüdyo - Yaratıcı Tasarım Atölyesi</title>
+    <title data-tr="Patates Stüdyo - Oyun Geliştirme Atölyesi" data-en="Potato Studio - Game Development Workshop">Patates Stüdyo - Oyun Geliştirme Atölyesi</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥔</text></svg>">
 </head>
-<body>
+<body class="light-theme">
+    <!-- Theme Toggle & Language Switcher -->
+    <div class="controls-panel">
+        <div class="theme-switcher">
+            <button id="themeToggle" class="control-btn">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+        <div class="language-switcher">
+            <button id="langToggle" class="control-btn">
+                <span class="flag">🇹🇷</span>
+                <span class="lang-text">TR</span>
+            </button>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
                 <span class="potato-emoji">🥔</span>
                 <span class="logo-text">Patates Stüdyo</span>
+                <span class="studio-type" data-tr="Game Studio" data-en="Game Studio">Game Studio</span>
             </div>
             <div class="nav-menu">
-                <a href="#home" class="nav-link">Ana Sayfa</a>
-                <a href="#about" class="nav-link">Hakkımızda</a>
-                <a href="#services" class="nav-link">Hizmetler</a>
-                <a href="#portfolio" class="nav-link">Portföy</a>
-                <a href="#contact" class="nav-link">İletişim</a>
+                <a href="#home" class="nav-link" data-tr="Ana Sayfa" data-en="Home">Ana Sayfa</a>
+                <a href="#about" class="nav-link" data-tr="Hakkımızda" data-en="About">Hakkımızda</a>
+                <a href="#games" class="nav-link" data-tr="Oyunlarımız" data-en="Our Games">Oyunlarımız</a>
+                <a href="#team" class="nav-link" data-tr="Ekibimiz" data-en="Our Team">Ekibimiz</a>
+                <a href="#services" class="nav-link" data-tr="Hizmetler" data-en="Services">Hizmetler</a>
+                <a href="#contact" class="nav-link" data-tr="İletişim" data-en="Contact">İletişim</a>
             </div>
             <div class="hamburger">
                 <span></span>
@@ -33,28 +51,61 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-bg-animation">
+            <div class="floating-code">console.log('Hello World!');</div>
+            <div class="floating-code">function createGame() {}</div>
+            <div class="floating-code">let potato = new Game();</div>
+            <div class="floating-code">class GameEngine {}</div>
+            <div class="floating-code">render();</div>
+        </div>
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="hero-title">
                     <span class="hero-potato">🥔</span>
-                    Patates Stüdyo
+                    <span class="title-text">Patates Stüdyo</span>
                 </h1>
-                <p class="hero-subtitle">Yaratıcılığın Topraktan Doğduğu Yer</p>
-                <p class="hero-description">
-                    Fikirlerinizi gerçeğe dönüştürüyoruz. Grafik tasarım, web geliştirme ve 
-                    marka kimliği oluşturma konularında uzman ekibimizle projelerinizi hayata geçiriyoruz.
+                <p class="hero-subtitle" data-tr="Oyunların Topraktan Doğduğu Yer" data-en="Where Games Grow From The Ground">Oyunların Topraktan Doğduğu Yer</p>
+                <p class="hero-description" data-tr="İnovatif oyun geliştirme ile dijital dünyada iz bırakıyoruz. Mobil, PC ve konsol platformlarında unutulmaz oyun deneyimleri yaratıyoruz." data-en="We leave our mark in the digital world with innovative game development. We create unforgettable gaming experiences on mobile, PC and console platforms.">
+                    İnovatif oyun geliştirme ile dijital dünyada iz bırakıyoruz. Mobil, PC ve konsol platformlarında unutulmaz oyun deneyimleri yaratıyoruz.
                 </p>
                 <div class="hero-buttons">
-                    <button class="btn btn-primary">Projemizi Başlatalım</button>
-                    <button class="btn btn-secondary">Portföyümüzü İncele</button>
+                    <button class="btn btn-primary" data-tr="Oyunlarımızı Keşfet" data-en="Discover Our Games">Oyunlarımızı Keşfet</button>
+                    <button class="btn btn-secondary" data-tr="Ekibimizle Tanış" data-en="Meet Our Team">Ekibimizle Tanış</button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label" data-tr="Yayınlanan Oyun" data-en="Published Games">Yayınlanan Oyun</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50K+</span>
+                        <span class="stat-label" data-tr="Aktif Oyuncu" data-en="Active Players">Aktif Oyuncu</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label" data-tr="Platform" data-en="Platforms">Platform</span>
+                    </div>
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="floating-elements">
-                    <div class="floating-potato potato-1">🥔</div>
-                    <div class="floating-potato potato-2">🍟</div>
-                    <div class="floating-potato potato-3">🥔</div>
-                    <div class="floating-potato potato-4">🍠</div>
+                <div class="game-showcase">
+                    <div class="game-screen">
+                        <div class="screen-content">
+                            <div class="game-ui">
+                                <div class="health-bar">
+                                    <div class="health-fill"></div>
+                                </div>
+                                <div class="score">Score: 9999</div>
+                                <div class="level">Level 42</div>
+                            </div>
+                            <div class="game-character">🥔</div>
+                            <div class="game-particles">
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -67,50 +118,382 @@
     <section id="about" class="about">
         <div class="container">
             <div class="section-header">
-                <h2>Hakkımızda</h2>
-                <p>Topraktan gelen ilhamla yaratıyoruz</p>
+                <h2 data-tr="Hakkımızda" data-en="About Us">Hakkımızda</h2>
+                <p data-tr="Yaratıcılık ve teknolojinin buluştuğu noktada" data-en="Where creativity meets technology">Yaratıcılık ve teknolojinin buluştuğu noktada</p>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Neden Patates Stüdyo?</h3>
-                    <p>
-                        Patates, doğanın en mütevazı ama en çok yönlü ürünlerinden biridir. 
-                        Bizde bu felsefeden ilham alarak, sade ama güçlü tasarımlar yaratıyoruz. 
-                        Her projede yaratıcılığımızın sınırlarını zorlayarak, müşterilerimizin 
-                        hayallerini gerçeğe dönüştürüyoruz.
+                    <h3 data-tr="Neden Patates Stüdyo?" data-en="Why Potato Studio?">Neden Patates Stüdyo?</h3>
+                    <p data-tr="Patates gibi sade ama çok yönlü oyunlar geliştiriyoruz. Her projemizde yaratıcılığımızın sınırlarını zorlayarak, oyuncuların hayal gücünü tetikleyen deneyimler yaratıyoruz. Indie'den AAA'ya kadar geniş bir yelpazede hizmet veriyoruz." data-en="We develop games that are simple like potatoes but versatile. In each project, we push the limits of our creativity, creating experiences that trigger players' imagination. We serve a wide range from indie to AAA.">
+                        Patates gibi sade ama çok yönlü oyunlar geliştiriyoruz. Her projemizde yaratıcılığımızın sınırlarını zorlayarak, 
+                        oyuncuların hayal gücünü tetikleyen deneyimler yaratıyoruz. Indie'den AAA'ya kadar geniş bir yelpazede hizmet veriyoruz.
                     </p>
-                    <div class="features">
-                        <div class="feature">
-                            <i class="fas fa-palette"></i>
-                            <span>Yaratıcı Tasarım</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-code"></i>
-                            <span>Modern Teknoloji</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-heart"></i>
-                            <span>Tutkulu Ekip</span>
+                    <div class="tech-stack">
+                        <h4 data-tr="Teknolojilerimiz" data-en="Our Technologies">Teknolojilerimiz</h4>
+                        <div class="tech-grid">
+                            <div class="tech-item">
+                                <i class="fab fa-unity"></i>
+                                <span>Unity</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-cube"></i>
+                                <span>Unreal Engine</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fab fa-js"></i>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fab fa-python"></i>
+                                <span>Python</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fab fa-android"></i>
+                                <span>Android</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fab fa-apple"></i>
+                                <span>iOS</span>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="about-visual">
-                    <div class="potato-grid">
-                        <div class="potato-card card-1">
-                            <i class="fas fa-lightbulb"></i>
-                            <h4>İnovasyon</h4>
+                    <div class="achievement-cards">
+                        <div class="achievement-card">
+                            <i class="fas fa-trophy"></i>
+                            <h4 data-tr="En İyi Indie Oyun 2023" data-en="Best Indie Game 2023">En İyi Indie Oyun 2023</h4>
+                            <p>Potato Quest</p>
                         </div>
-                        <div class="potato-card card-2">
-                            <i class="fas fa-rocket"></i>
-                            <h4>Hız</h4>
-                        </div>
-                        <div class="potato-card card-3">
+                        <div class="achievement-card">
                             <i class="fas fa-star"></i>
-                            <h4>Kalite</h4>
+                            <h4 data-tr="Oyuncu Tercihi Ödülü" data-en="Players' Choice Award">Oyuncu Tercihi Ödülü</h4>
+                            <p>Spud Adventure</p>
                         </div>
-                        <div class="potato-card card-4">
-                            <i class="fas fa-users"></i>
-                            <h4>Ekip Çalışması</h4>
+                        <div class="achievement-card">
+                            <i class="fas fa-download"></i>
+                            <h4 data-tr="1M+ İndirme" data-en="1M+ Downloads">1M+ İndirme</h4>
+                            <p>Fries Run</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section id="games" class="games">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-tr="Oyunlarımız" data-en="Our Games">Oyunlarımız</h2>
+                <p data-tr="Geliştirdiğimiz başarılı oyunlar" data-en="Successful games we've developed">Geliştirdiğimiz başarılı oyunlar</p>
+            </div>
+            <div class="games-filter">
+                <button class="filter-btn active" data-filter="all" data-tr="Tümü" data-en="All">Tümü</button>
+                <button class="filter-btn" data-filter="mobile" data-tr="Mobil" data-en="Mobile">Mobil</button>
+                <button class="filter-btn" data-filter="pc" data-tr="PC" data-en="PC">PC</button>
+                <button class="filter-btn" data-filter="console" data-tr="Konsol" data-en="Console">Konsol</button>
+            </div>
+            <div class="games-grid">
+                <div class="game-card" data-category="mobile">
+                    <div class="game-image">
+                        <div class="placeholder-game mobile-game">
+                            <i class="fas fa-mobile-alt"></i>
+                            <div class="game-particles-bg"></div>
+                        </div>
+                        <div class="game-overlay">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <div class="game-header">
+                            <h4>Potato Quest Mobile</h4>
+                            <div class="game-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                        <p class="game-description" data-tr="Eğlenceli platform oyunu. Patates karakteriyle maceraya atıl!" data-en="Fun platform game. Join the adventure with the potato character!">Eğlenceli platform oyunu. Patates karakteriyle maceraya atıl!</p>
+                        <div class="game-tags">
+                            <span class="tag">Adventure</span>
+                            <span class="tag">Platform</span>
+                            <span class="tag">Casual</span>
+                        </div>
+                        <div class="game-platforms">
+                            <i class="fab fa-android"></i>
+                            <i class="fab fa-apple"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card" data-category="pc">
+                    <div class="game-image">
+                        <div class="placeholder-game pc-game">
+                            <i class="fas fa-desktop"></i>
+                            <div class="game-particles-bg"></div>
+                        </div>
+                        <div class="game-overlay">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <div class="game-header">
+                            <h4>Spud Wars: Origins</h4>
+                            <div class="game-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.9</span>
+                            </div>
+                        </div>
+                        <p class="game-description" data-tr="Strateji ve aksiyon dolu RTS oyunu. Patates ordularını yönet!" data-en="Strategy and action-packed RTS game. Command your potato armies!">Strateji ve aksiyon dolu RTS oyunu. Patates ordularını yönet!</p>
+                        <div class="game-tags">
+                            <span class="tag">Strategy</span>
+                            <span class="tag">RTS</span>
+                            <span class="tag">Multiplayer</span>
+                        </div>
+                        <div class="game-platforms">
+                            <i class="fab fa-windows"></i>
+                            <i class="fab fa-steam"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card" data-category="console">
+                    <div class="game-image">
+                        <div class="placeholder-game console-game">
+                            <i class="fas fa-gamepad"></i>
+                            <div class="game-particles-bg"></div>
+                        </div>
+                        <div class="game-overlay">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <div class="game-header">
+                            <h4>Fries Adventure Deluxe</h4>
+                            <div class="game-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.7</span>
+                            </div>
+                        </div>
+                        <p class="game-description" data-tr="Açık dünya RPG macerası. Epic patates efsanesi!" data-en="Open world RPG adventure. Epic potato legend!">Açık dünya RPG macerası. Epic patates efsanesi!</p>
+                        <div class="game-tags">
+                            <span class="tag">RPG</span>
+                            <span class="tag">Open World</span>
+                            <span class="tag">Adventure</span>
+                        </div>
+                        <div class="game-platforms">
+                            <i class="fab fa-playstation"></i>
+                            <i class="fab fa-xbox"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card" data-category="mobile">
+                    <div class="game-image">
+                        <div class="placeholder-game mobile-game">
+                            <i class="fas fa-mobile-alt"></i>
+                            <div class="game-particles-bg"></div>
+                        </div>
+                        <div class="game-overlay">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <div class="game-header">
+                            <h4>Potato Puzzle</h4>
+                            <div class="game-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.6</span>
+                            </div>
+                        </div>
+                        <p class="game-description" data-tr="Beyin yakıcı puzzle oyunu. Zekana güveniyorsan dene!" data-en="Brain-burning puzzle game. Try it if you trust your intelligence!">Beyin yakıcı puzzle oyunu. Zekana güveniyorsan dene!</p>
+                        <div class="game-tags">
+                            <span class="tag">Puzzle</span>
+                            <span class="tag">Brain</span>
+                            <span class="tag">Logic</span>
+                        </div>
+                        <div class="game-platforms">
+                            <i class="fab fa-android"></i>
+                            <i class="fab fa-apple"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-tr="Ekibimiz" data-en="Our Team">Ekibimiz</h2>
+                <p data-tr="Oyunları hayata geçiren yetenekli ekibimiz" data-en="Our talented team that brings games to life">Oyunları hayata geçiren yetenekli ekibimiz</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div class="member-status online"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Ahmet Yılmaz</h4>
+                        <p class="member-role" data-tr="Stüdyo Kurucusu & CEO" data-en="Studio Founder & CEO">Stüdyo Kurucusu & CEO</p>
+                        <div class="member-rank">
+                            <span class="rank-badge founder" data-tr="Kurucu" data-en="Founder">Kurucu</span>
+                        </div>
+                        <p class="member-description" data-tr="10+ yıl oyun geliştirme deneyimi. Unity ve Unreal Engine uzmanı." data-en="10+ years of game development experience. Unity and Unreal Engine expert.">10+ yıl oyun geliştirme deneyimi. Unity ve Unreal Engine uzmanı.</p>
+                        <div class="member-contacts">
+                            <a href="mailto:ahmet@patatesstudyo.com" class="contact-btn">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="#" class="contact-btn discord" data-discord="AhmetDev#1234">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <a href="#" class="contact-btn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <div class="member-status online"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Zeynep Kaya</h4>
+                        <p class="member-role" data-tr="Baş Sanat Yönetmeni" data-en="Lead Art Director">Baş Sanat Yönetmeni</p>
+                        <div class="member-rank">
+                            <span class="rank-badge lead" data-tr="Ekip Lideri" data-en="Team Lead">Ekip Lideri</span>
+                        </div>
+                        <p class="member-description" data-tr="Karakterler ve ortamlar tasarımında uzman. Photoshop ve Blender master." data-en="Expert in character and environment design. Photoshop and Blender master.">Karakterler ve ortamlar tasarımında uzman. Photoshop ve Blender master.</p>
+                        <div class="member-contacts">
+                            <a href="mailto:zeynep@patatesstudyo.com" class="contact-btn">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="#" class="contact-btn discord" data-discord="ZeynepArt#5678">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <a href="#" class="contact-btn">
+                                <i class="fab fa-artstation"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="member-status busy"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Mehmet Demir</h4>
+                        <p class="member-role" data-tr="Baş Yazılım Geliştirici" data-en="Lead Software Developer">Baş Yazılım Geliştirici</p>
+                        <div class="member-rank">
+                            <span class="rank-badge senior" data-tr="Kıdemli" data-en="Senior">Kıdemli</span>
+                        </div>
+                        <p class="member-description" data-tr="C# ve JavaScript uzmanı. Oyun motorları ve backend geliştirme." data-en="C# and JavaScript expert. Game engines and backend development.">C# ve JavaScript uzmanı. Oyun motorları ve backend geliştirme.</p>
+                        <div class="member-contacts">
+                            <a href="mailto:mehmet@patatesstudyo.com" class="contact-btn">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="#" class="contact-btn discord" data-discord="MehmetDev#9999">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <a href="#" class="contact-btn">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <div class="member-status away"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Ayşe Özkan</h4>
+                        <p class="member-role" data-tr="Ses Tasarımcısı" data-en="Sound Designer">Ses Tasarımcısı</p>
+                        <div class="member-rank">
+                            <span class="rank-badge creative" data-tr="Yaratıcı" data-en="Creative">Yaratıcı</span>
+                        </div>
+                        <p class="member-description" data-tr="Oyun müzikleri ve ses efektleri. Logic Pro ve Ableton uzmanı." data-en="Game music and sound effects. Logic Pro and Ableton expert.">Oyun müzikleri ve ses efektleri. Logic Pro ve Ableton uzmanı.</p>
+                        <div class="member-contacts">
+                            <a href="mailto:ayse@patatesstudyo.com" class="contact-btn">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="#" class="contact-btn discord" data-discord="AyseSound#4567">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <a href="#" class="contact-btn">
+                                <i class="fab fa-spotify"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <div class="member-status online"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Can Yıldız</h4>
+                        <p class="member-role" data-tr="Oyun Tasarımcısı" data-en="Game Designer">Oyun Tasarımcısı</p>
+                        <div class="member-rank">
+                            <span class="rank-badge developer" data-tr="Geliştirici" data-en="Developer">Geliştirici</span>
+                        </div>
+                        <p class="member-description" data-tr="Oyun mekaniği ve seviye tasarımı. Unity ve gameplay programming." data-en="Game mechanics and level design. Unity and gameplay programming.">Oyun mekaniği ve seviye tasarımı. Unity ve gameplay programming.</p>
+                        <div class="member-contacts">
+                            <a href="mailto:can@patatesstudyo.com" class="contact-btn">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="#" class="contact-btn discord" data-discord="CanGame#7890">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <a href="#" class="contact-btn">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder">
+                            <i class="fas fa-bug"></i>
+                        </div>
+                        <div class="member-status online"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Elif Şahin</h4>
+                        <p class="member-role" data-tr="QA Test Uzmanı" data-en="QA Test Specialist">QA Test Uzmanı</p>
+                        <div class="member-rank">
+                            <span class="rank-badge qa" data-tr="Kalite" data-en="Quality">Kalite</span>
+                        </div>
+                        <p class="member-description" data-tr="Oyun testleri ve hata bulma. Automated testing ve bug tracking." data-en="Game testing and bug finding. Automated testing and bug tracking.">Oyun testleri ve hata bulma. Automated testing ve bug tracking.</p>
+                        <div class="member-contacts">
+                            <a href="mailto:elif@patatesstudyo.com" class="contact-btn">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="#" class="contact-btn discord" data-discord="ElifQA#2345">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <a href="#" class="contact-btn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -122,138 +505,50 @@
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
-                <h2>Hizmetlerimiz</h2>
-                <p>Dijital dünyada büyüyen çözümler</p>
+                <h2 data-tr="Hizmetlerimiz" data-en="Our Services">Hizmetlerimiz</h2>
+                <p data-tr="Oyun geliştirmede sunduğumuz profesyonel çözümler" data-en="Professional solutions we offer in game development">Oyun geliştirmede sunduğumuz profesyonel çözümler</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-paint-brush"></i>
+                        <i class="fas fa-mobile-alt"></i>
                     </div>
-                    <h3>Grafik Tasarım</h3>
-                    <p>Logo, afiş, broşür ve kurumsal kimlik tasarımları ile markanızı öne çıkarıyoruz.</p>
+                    <h3 data-tr="Mobil Oyun Geliştirme" data-en="Mobile Game Development">Mobil Oyun Geliştirme</h3>
+                    <p data-tr="Android ve iOS platformları için optimize edilmiş oyunlar geliştiriyoruz." data-en="We develop games optimized for Android and iOS platforms.">Android ve iOS platformları için optimize edilmiş oyunlar geliştiriyoruz.</p>
                     <ul>
-                        <li>Logo Tasarımı</li>
-                        <li>Kurumsal Kimlik</li>
-                        <li>Baskı Tasarımları</li>
-                        <li>Sosyal Medya Görselleri</li>
+                        <li data-tr="Native ve Cross-platform" data-en="Native and Cross-platform">Native ve Cross-platform</li>
+                        <li data-tr="Unity ve React Native" data-en="Unity and React Native">Unity ve React Native</li>
+                        <li data-tr="App Store Optimizasyonu" data-en="App Store Optimization">App Store Optimizasyonu</li>
+                        <li data-tr="In-App Purchase Entegrasyonu" data-en="In-App Purchase Integration">In-App Purchase Entegrasyonu</li>
                     </ul>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>Web Tasarım & Geliştirme</h3>
-                    <p>Responsive ve modern web siteleri ile dijital varlığınızı güçlendiriyoruz.</p>
-                    <ul>
-                        <li>Responsive Web Sitesi</li>
-                        <li>E-ticaret Platformları</li>
-                        <li>Mobil Uygulamalar</li>
-                        <li>SEO Optimizasyonu</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-bullhorn"></i>
-                    </div>
-                    <h3>Dijital Pazarlama</h3>
-                    <p>Sosyal medya yönetimi ve dijital reklam çözümleri ile erişiminizi artırıyoruz.</p>
-                    <ul>
-                        <li>Sosyal Medya Yönetimi</li>
-                        <li>Google Ads</li>
-                        <li>İçerik Üretimi</li>
-                        <li>Marka Stratejisi</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <div class="section-header">
-                <h2>Portföyümüz</h2>
-                <p>Gerçekleştirdiğimiz başarılı projeler</p>
-            </div>
-            <div class="portfolio-filter">
-                <button class="filter-btn active" data-filter="all">Tümü</button>
-                <button class="filter-btn" data-filter="web">Web Tasarım</button>
-                <button class="filter-btn" data-filter="branding">Marka Kimliği</button>
-                <button class="filter-btn" data-filter="print">Baskı Tasarım</button>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item" data-category="web">
-                    <div class="portfolio-image">
-                        <div class="placeholder-image web-placeholder">
-                            <i class="fas fa-globe"></i>
-                            <span>Web Projesi</span>
-                        </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-desktop"></i>
                     </div>
-                    <div class="portfolio-info">
-                        <h4>E-ticaret Platformu</h4>
-                        <p>Modern ve kullanıcı dostu e-ticaret sitesi</p>
-                    </div>
+                    <h3 data-tr="PC Oyun Geliştirme" data-en="PC Game Development">PC Oyun Geliştirme</h3>
+                    <p data-tr="Windows, Mac ve Linux için yüksek performanslı oyunlar yaratıyoruz." data-en="We create high-performance games for Windows, Mac and Linux.">Windows, Mac ve Linux için yüksek performanslı oyunlar yaratıyoruz.</p>
+                    <ul>
+                        <li data-tr="Unity ve Unreal Engine" data-en="Unity and Unreal Engine">Unity ve Unreal Engine</li>
+                        <li data-tr="Steam Entegrasyonu" data-en="Steam Integration">Steam Entegrasyonu</li>
+                        <li data-tr="Multiplayer Oyunlar" data-en="Multiplayer Games">Multiplayer Oyunlar</li>
+                        <li data-tr="VR/AR Oyunları" data-en="VR/AR Games">VR/AR Oyunları</li>
+                    </ul>
                 </div>
-                <div class="portfolio-item" data-category="branding">
-                    <div class="portfolio-image">
-                        <div class="placeholder-image brand-placeholder">
-                            <i class="fas fa-stamp"></i>
-                            <span>Marka Kimliği</span>
-                        </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gamepad"></i>
                     </div>
-                    <div class="portfolio-info">
-                        <h4>Restoran Marka Kimliği</h4>
-                        <p>Özgün logo ve kurumsal kimlik tasarımı</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="print">
-                    <div class="portfolio-image">
-                        <div class="placeholder-image print-placeholder">
-                            <i class="fas fa-print"></i>
-                            <span>Baskı Tasarım</span>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <h4>Kurumsal Broşür</h4>
-                        <p>Etkileyici kurumsal tanıtım broşürü</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="web">
-                    <div class="portfolio-image">
-                        <div class="placeholder-image web-placeholder">
-                            <i class="fas fa-mobile-alt"></i>
-                            <span>Mobil App</span>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <h4>Mobil Uygulama</h4>
-                        <p>iOS ve Android uyumlu mobil app</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="branding">
-                    <div class="portfolio-image">
-                        <div class="placeholder-image brand-placeholder">
-                            <i class="fas fa-coffee"></i>
-                            <span>Cafe Branding</span>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <h4>Kafe Marka Tasarımı</h4>
-                        <p>Komple marka kimliği ve ambalaj tasarımı</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="print">
-                    <div class="portfolio-image">
-                        <div class="placeholder-image print-placeholder">
-                            <i class="fas fa-calendar"></i>
-                            <span>Takvim Tasarımı</span>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <h4>Kurumsal Takvim</h4>
-                        <p>Yaratıcı 2024 kurumsal takvim tasarımı</p>
-                    </div>
+                    <h3 data-tr="Konsol Oyun Geliştirme" data-en="Console Game Development">Konsol Oyun Geliştirme</h3>
+                    <p data-tr="PlayStation, Xbox ve Nintendo Switch için AAA kalitesinde oyunlar." data-en="AAA quality games for PlayStation, Xbox and Nintendo Switch.">PlayStation, Xbox ve Nintendo Switch için AAA kalitesinde oyunlar.</p>
+                    <ul>
+                        <li data-tr="PlayStation 5 & Xbox Series" data-en="PlayStation 5 & Xbox Series">PlayStation 5 & Xbox Series</li>
+                        <li data-tr="Nintendo Switch" data-en="Nintendo Switch">Nintendo Switch</li>
+                        <li data-tr="HDR ve 4K Desteği" data-en="HDR and 4K Support">HDR ve 4K Desteği</li>
+                        <li data-tr="Trophy/Achievement Sistemi" data-en="Trophy/Achievement System">Trophy/Achievement Sistemi</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -263,13 +558,13 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <h2>İletişim</h2>
-                <p>Projeleriniz için bizimle iletişime geçin</p>
+                <h2 data-tr="İletişim" data-en="Contact">İletişim</h2>
+                <p data-tr="Projeleriniz için bizimle iletişime geçin" data-en="Contact us for your projects">Projeleriniz için bizimle iletişime geçin</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Patates Stüdyo ile İletişime Geçin</h3>
-                    <p>Fikirlerinizi gerçeğe dönüştürmek için sabırsızlanıyoruz!</p>
+                    <h3 data-tr="Patates Stüdyo ile İletişime Geçin" data-en="Get in Touch with Potato Studio">Patates Stüdyo ile İletişime Geçin</h3>
+                    <p data-tr="Oyun projelerinizi hayata geçirmek için sabırsızlanıyoruz!" data-en="We can't wait to bring your game projects to life!">Oyun projelerinizi hayata geçirmek için sabırsızlanıyoruz!</p>
                     <div class="contact-details">
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
@@ -277,44 +572,50 @@
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <span>merhaba@patatesstudyo.com</span>
+                            <span>info@patatesstudyo.com</span>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>İstanbul, Türkiye</span>
+                            <span data-tr="İstanbul, Türkiye" data-en="Istanbul, Turkey">İstanbul, Türkiye</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-discord"></i>
+                            <span>discord.gg/patatesstudyo</span>
                         </div>
                     </div>
                     <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-steam"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-behance"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitch"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
                 <div class="contact-form">
                     <form>
                         <div class="form-group">
-                            <input type="text" placeholder="Adınız Soyadınız" required>
+                            <input type="text" placeholder="Adınız Soyadınız / Your Name" required data-tr-placeholder="Adınız Soyadınız" data-en-placeholder="Your Name">
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="E-posta Adresiniz" required>
+                            <input type="email" placeholder="E-posta Adresiniz / Your Email" required data-tr-placeholder="E-posta Adresiniz" data-en-placeholder="Your Email">
                         </div>
                         <div class="form-group">
-                            <input type="tel" placeholder="Telefon Numaranız">
+                            <input type="tel" placeholder="Telefon Numaranız / Your Phone" data-tr-placeholder="Telefon Numaranız" data-en-placeholder="Your Phone">
                         </div>
                         <div class="form-group">
                             <select required>
-                                <option value="">Hizmet Seçiniz</option>
-                                <option value="web">Web Tasarım & Geliştirme</option>
-                                <option value="branding">Marka Kimliği</option>
-                                <option value="graphic">Grafik Tasarım</option>
-                                <option value="digital">Dijital Pazarlama</option>
+                                <option value="" data-tr="Proje Türü Seçiniz" data-en="Select Project Type">Proje Türü Seçiniz</option>
+                                <option value="mobile" data-tr="Mobil Oyun" data-en="Mobile Game">Mobil Oyun</option>
+                                <option value="pc" data-tr="PC Oyun" data-en="PC Game">PC Oyun</option>
+                                <option value="console" data-tr="Konsol Oyun" data-en="Console Game">Konsol Oyun</option>
+                                <option value="consulting" data-tr="Danışmanlık" data-en="Consulting">Danışmanlık</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Proje detaylarınızı yazın..." rows="5" required></textarea>
+                            <textarea placeholder="Proje detaylarınızı yazın... / Write your project details..." rows="5" required data-tr-placeholder="Proje detaylarınızı yazın..." data-en-placeholder="Write your project details..."></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Mesaj Gönder</button>
+                        <button type="submit" class="btn btn-primary" data-tr="Mesaj Gönder" data-en="Send Message">Mesaj Gönder</button>
                     </form>
                 </div>
             </div>
@@ -330,18 +631,20 @@
                     <span class="logo-text">Patates Stüdyo</span>
                 </div>
                 <div class="footer-text">
-                    <p>&copy; 2024 Patates Stüdyo. Tüm hakları saklıdır.</p>
-                    <p>Yaratıcılığın topraktan doğduğu yer.</p>
+                    <p>&copy; 2024 Patates Stüdyo. <span data-tr="Tüm hakları saklıdır." data-en="All rights reserved.">Tüm hakları saklıdır.</span></p>
+                    <p data-tr="Oyunların topraktan doğduğu yer." data-en="Where games grow from the ground.">Oyunların topraktan doğduğu yer.</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Floating Potato Animation -->
-    <div class="floating-potatoes">
-        <div class="floating-bg-potato potato-bg-1">🥔</div>
-        <div class="floating-bg-potato potato-bg-2">🍟</div>
-        <div class="floating-bg-potato potato-bg-3">🥔</div>
+    <!-- Floating Game Elements -->
+    <div class="floating-elements">
+        <div class="floating-element element-1">💻</div>
+        <div class="floating-element element-2">🎮</div>
+        <div class="floating-element element-3">🎯</div>
+        <div class="floating-element element-4">⚡</div>
+        <div class="floating-element element-5">🚀</div>
     </div>
 
     <script src="script.js"></script>
