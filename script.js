@@ -83,8 +83,11 @@ class GameStudioWebsite {
 
     toggleTheme() {
         this.currentTheme = this.currentTheme === 'light' ? 'dark' : 'light';
+        
+        // Apply theme to both data attribute and class for better compatibility
         document.documentElement.setAttribute('data-theme', this.currentTheme);
         document.body.classList.toggle('dark-theme', this.currentTheme === 'dark');
+        document.body.classList.toggle('light-theme', this.currentTheme === 'light');
 
         const themeIcon = document.querySelector('#themeToggle i');
         if (themeIcon) {
@@ -191,17 +194,24 @@ class GameStudioWebsite {
         const navbar = document.querySelector('.navbar');
         const scrolled = window.pageYOffset;
         
-        // Navbar background effect
+        // Navbar background effect based on current theme
+        const isDark = document.body.classList.contains('dark-theme') || 
+                      document.documentElement.getAttribute('data-theme') === 'dark';
+        
         if (scrolled > 100) {
-            navbar.style.background = this.currentTheme === 'dark' 
+            navbar.style.background = isDark 
                 ? 'rgba(26, 26, 26, 0.98)' 
                 : 'rgba(255, 255, 255, 0.98)';
-            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
+            navbar.style.boxShadow = isDark 
+                ? '0 2px 20px rgba(255, 255, 255, 0.15)' 
+                : '0 2px 20px rgba(0, 0, 0, 0.15)';
         } else {
-            navbar.style.background = this.currentTheme === 'dark' 
+            navbar.style.background = isDark 
                 ? 'rgba(26, 26, 26, 0.95)' 
                 : 'rgba(255, 255, 255, 0.95)';
-            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            navbar.style.boxShadow = isDark 
+                ? '0 2px 20px rgba(255, 255, 255, 0.1)' 
+                : '0 2px 20px rgba(0, 0, 0, 0.1)';
         }
 
         // Parallax effects
@@ -315,9 +325,25 @@ class GameStudioWebsite {
 
     handleFormSubmission(form) {
         const formData = new FormData(form);
-        const name = form.querySelector('input[type="text"]').value;
-        const email = form.querySelector('input[type="email"]').value;
-        const message = form.querySelector('textarea').value;
+        const nameInput = form.querySelector('input[type="text"]');
+        const emailInput = form.querySelector('input[type="email"]');
+        const messageInput = form.querySelector('textarea');
+        const selectInput = form.querySelector('select');
+
+        if (!nameInput || !emailInput || !messageInput) {
+            this.showNotification(
+                this.currentLang === 'tr' 
+                    ? 'Form elemanları bulunamadı!' 
+                    : 'Form elements not found!',
+                'error'
+            );
+            return;
+        }
+
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const message = messageInput.value.trim();
+        const service = selectInput ? selectInput.value : '';
 
         // Validation
         if (!name || !email || !message) {
@@ -337,6 +363,17 @@ class GameStudioWebsite {
                 this.currentLang === 'tr' 
                     ? 'Geçerli bir e-posta adresi girin!' 
                     : 'Please enter a valid email address!',
+                'error'
+            );
+            return;
+        }
+
+        // Service selection validation
+        if (!service) {
+            this.showNotification(
+                this.currentLang === 'tr' 
+                    ? 'Lütfen bir hizmet türü seçin!' 
+                    : 'Please select a service type!',
                 'error'
             );
             return;
@@ -422,6 +459,7 @@ class GameStudioWebsite {
     initTheme() {
         // Set initial theme
         document.documentElement.setAttribute('data-theme', this.currentTheme);
+        document.body.classList.add('light-theme');
     }
 
     initLanguage() {
@@ -560,6 +598,8 @@ class GameStudioWebsite {
     createExplosionParticle(button) {
         const particle = document.createElement('div');
         const rect = button.getBoundingClientRect();
+        const randomX = Math.random() * 200 - 100;
+        const randomY = Math.random() * 200 - 100;
         
         particle.style.cssText = `
             position: fixed;
@@ -569,12 +609,18 @@ class GameStudioWebsite {
             border-radius: 50%;
             left: ${rect.left + rect.width/2}px;
             top: ${rect.top + rect.height/2}px;
-            animation: explode 1s ease-out forwards;
             pointer-events: none;
             z-index: 10000;
+            transition: all 1s ease-out;
         `;
 
         document.body.appendChild(particle);
+
+        // Animate with transform
+        setTimeout(() => {
+            particle.style.transform = `translate(${randomX}px, ${randomY}px) scale(0)`;
+            particle.style.opacity = '0';
+        }, 10);
 
         setTimeout(() => {
             if (particle.parentNode) {
@@ -735,6 +781,7 @@ class GameStudioWebsite {
         if (!titleElement) return;
         
         const text = 'Patates Stüdyo';
+        const originalText = titleElement.textContent;
         titleElement.textContent = '';
         let i = 0;
         
@@ -746,6 +793,13 @@ class GameStudioWebsite {
                 clearInterval(typeInterval);
             }
         }, 100);
+        
+        // Fallback: restore original text if something goes wrong
+        setTimeout(() => {
+            if (titleElement.textContent === '') {
+                titleElement.textContent = originalText;
+            }
+        }, 3000);
     }
 
     startFloatingElements() {
@@ -792,12 +846,14 @@ class GameStudioWebsite {
         // Load saved theme
         const savedTheme = localStorage.getItem('gameStudioTheme');
         if (savedTheme && savedTheme !== this.currentTheme) {
+            this.currentTheme = savedTheme === 'dark' ? 'light' : 'dark'; // Set opposite so toggle works correctly
             this.toggleTheme();
         }
 
         // Load saved language
         const savedLang = localStorage.getItem('gameStudioLang');
         if (savedLang && savedLang !== this.currentLang) {
+            this.currentLang = savedLang === 'tr' ? 'en' : 'tr'; // Set opposite so toggle works correctly
             this.toggleLanguage();
         }
     }
@@ -833,21 +889,22 @@ class GameStudioWebsite {
             warning: '#ff9800'
         };
 
-        notification.style.cssText = `
-            position: fixed;
-            top: 100px;
-            right: 20px;
-            background: ${colors[type] || colors.info};
-            color: white;
-            padding: 1rem 1.5rem;
-            border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            z-index: 10000;
-            animation: notificationSlide 0.5s ease;
-            max-width: 400px;
-            font-family: 'Poppins', sans-serif;
-            backdrop-filter: blur(10px);
-        `;
+                 notification.style.cssText = `
+             position: fixed;
+             top: 100px;
+             right: 20px;
+             background: ${colors[type] || colors.info};
+             color: white;
+             padding: 1rem 1.5rem;
+             border-radius: 15px;
+             box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+             z-index: 99999;
+             animation: notificationSlide 0.5s ease;
+             max-width: 400px;
+             font-family: 'Poppins', sans-serif;
+             backdrop-filter: blur(10px);
+             border: 2px solid rgba(255,255,255,0.1);
+         `;
 
         document.body.appendChild(notification);
 
@@ -925,16 +982,16 @@ styleSheet.textContent = `
         }
     }
     
-    @keyframes explode {
-        0% { 
-            transform: translate(0, 0) scale(1);
-            opacity: 1;
-        }
-        100% { 
-            transform: translate(${Math.random() * 200 - 100}px, ${Math.random() * 200 - 100}px) scale(0);
-            opacity: 0;
-        }
-    }
+         @keyframes explode {
+         0% { 
+             transform: translate(0, 0) scale(1);
+             opacity: 1;
+         }
+         100% { 
+             transform: translate(100px, -100px) scale(0);
+             opacity: 0;
+         }
+     }
     
     @keyframes playButtonClick {
         0% { transform: scale(1); }
@@ -1044,8 +1101,18 @@ styleSheet.textContent = `
         }
         
         .nav-link {
-            padding: 1rem 0;
+            padding: 1rem 2rem;
+            margin: 0.5rem 0;
             border-bottom: 1px solid var(--border-color);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            background: var(--primary-color);
+            color: white !important;
+            transform: translateY(0);
         }
         
         .hamburger.active span:nth-child(2) {
