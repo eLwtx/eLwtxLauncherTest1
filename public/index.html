@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Şahin Dekorasyon | Dekorasyon, Restorasyon, Mermer Yenileme, Boya Badana</title>
+    <meta name="description" content="Şahin Dekorasyon - Dekorasyon, restorasyon, mermer yenileme, duvar boyama, alçıpan ve daha fazlası. İstanbul içi profesyonel hizmet." />
+    <link rel="icon" type="image/svg+xml" href="/assets/logo.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#top">
+          <img src="/assets/logo.svg" alt="Şahin Dekorasyon" class="brand-logo" />
+          <span class="brand-name">Şahin Dekorasyon</span>
+        </a>
+        <nav class="nav">
+          <a href="#hizmetler">Hizmetler</a>
+          <a href="#isler">Yapılan İşler</a>
+          <a href="#iletisim">İletişim</a>
+          <a href="https://instagram.com/sahindekorasyon34" target="_blank" rel="noopener">Instagram</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="top">
+        <div class="container hero-inner">
+          <div class="hero-text">
+            <h1>Modern ve Güvenilir Dekorasyon Çözümleri</h1>
+            <p>Dekorasyon, restorasyon, mermer yenileme, duvar boyama, boya badana, alçıpan ve alçı uygulamalarında uzman ekibimizle yanınızdayız.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#iletisim">Teklif Al</a>
+              <a class="btn btn-ghost" href="https://instagram.com/sahindekorasyon34" target="_blank" rel="noopener">Instagram'ı Gör</a>
+            </div>
+          </div>
+          <div class="hero-media">
+            <img src="/assets/logo.svg" alt="Şahin Dekorasyon Logo" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="hizmetler">
+        <div class="container">
+          <h2 class="section-title">Hizmetler</h2>
+          <div class="grid services">
+            <div class="card"><h3>Restorasyon</h3><p>Eski yapıları aslına uygun restore ediyoruz.</p></div>
+            <div class="card"><h3>Mermer Yenileme</h3><p>Çizik ve mat görünümü gideren profesyonel cila ve parlatma.</p></div>
+            <div class="card"><h3>Duvar Boyama</h3><p>İç-dış cephe boya, boya badana ve renk danışmanlığı.</p></div>
+            <div class="card"><h3>Alçıpan & Alçı</h3><p>Bölme duvar, asma tavan, kartonpiyer ve alçı sıva.</p></div>
+            <div class="card"><h3>Dekorasyon</h3><p>A'dan Z'ye anahtar teslim dekorasyon çözümleri.</p></div>
+            <div class="card"><h3>Tadilat</h3><p>Mutfak, banyo, zemin ve kapı yenileme.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="isler">
+        <div class="container">
+          <h2 class="section-title">Yapılan İşler</h2>
+          <div class="grid portfolio">
+            <figure class="portfolio-item"><img src="/assets/portfolio-1.svg" alt="Mermer Yenileme" /><figcaption>Mermer Yenileme</figcaption></figure>
+            <figure class="portfolio-item"><img src="/assets/portfolio-2.svg" alt="Duvar Boyama" /><figcaption>Duvar Boyama</figcaption></figure>
+            <figure class="portfolio-item"><img src="/assets/portfolio-3.svg" alt="Alçıpan" /><figcaption>Alçıpan</figcaption></figure>
+            <figure class="portfolio-item"><img src="/assets/portfolio-4.svg" alt="Restorasyon" /><figcaption>Restorasyon</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="iletisim">
+        <div class="container">
+          <h2 class="section-title">İletişim</h2>
+          <div class="contact-grid">
+            <div class="contact-info">
+              <p><strong>Domain:</strong> sahindekorasyon.tr</p>
+              <p><strong>E-posta:</strong> <a href="mailto:iletisim@sahindekorasyon.tr">iletisim@sahindekorasyon.tr</a></p>
+              <p><strong>Instagram:</strong> <a href="https://instagram.com/sahindekorasyon34" target="_blank" rel="noopener">@sahindekorasyon34</a></p>
+            </div>
+            <form id="contact-form" class="contact-form" novalidate>
+              <div class="field">
+                <label for="name">İsim</label>
+                <input id="name" name="name" type="text" placeholder="Adınız" required />
+              </div>
+              <div class="field">
+                <label for="phone">Numara</label>
+                <input id="phone" name="phone" type="tel" placeholder="05xx xxx xx xx" required />
+              </div>
+              <div class="field">
+                <label for="message">Mesaj</label>
+                <textarea id="message" name="message" rows="5" placeholder="Mesajınız" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" id="submitBtn">Gönder</button>
+              <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Şahin Dekorasyon • <a href="mailto:iletisim@sahindekorasyon.tr">iletisim@sahindekorasyon.tr</a></p>
+      </div>
+    </footer>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>
