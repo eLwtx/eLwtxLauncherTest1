@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setStatus('', true);
 
       try {
-        const res = await fetch('/api/contact', {
+        const res = await fetch('/contact.php', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload),

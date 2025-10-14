@@ -1,0 +1,7 @@
+<?php
+// cPanel için e-posta yapılandırma örneği
+// Bu dosyayı config.php olarak kopyalayıp değerleri güncelleyin.
+return [
+  'MAIL_TO' => 'iletisim@sahindekorasyon.tr',
+  'MAIL_FROM' => 'website@sahindekorasyon.tr',
+];
