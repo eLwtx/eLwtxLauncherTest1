@@ -34,10 +34,8 @@ body{
 .hero{position:relative; padding:80px 0 40px}
 .hero__glow{position:absolute; inset:0; pointer-events:none; background:conic-gradient(from 0deg, rgba(255,0,76,0.08), rgba(255,153,0,0.08), rgba(255,230,0,0.08), rgba(38,255,0,0.08), rgba(0,245,255,0.08), rgba(122,92,255,0.08), rgba(255,0,230,0.08), rgba(255,0,76,0.08)); filter:blur(60px); mask:radial-gradient(60% 60% at 50% 10%, #000 40%, transparent 70%)}
 .hero__inner{position:relative; z-index:1; text-align:center}
-.hero__logo{display:flex; justify-content:center; margin-bottom:10px}
-.logo{height:clamp(56px, 8vw, 84px); width:auto; border-radius:12px; background:transparent; border:1px solid var(--border); box-shadow:0 10px 30px rgba(122,92,255,0.25)}
-.brand{font-family:Montserrat, Poppins, sans-serif; font-weight:800; font-size:clamp(36px, 6vw, 72px); letter-spacing:1px; margin:0 0 10px}
-.brand__orb{display:inline-block; width:0.6em; height:0.6em; border-radius:999px; margin-left:0.2em; background:conic-gradient(from 0deg, #ff004c, #f90, #ffe600, #26ff00, #00f5ff, #7a5cff, #ff00e6, #ff004c); animation:spin var(--rgb-speed) linear infinite}
+.brand{display:inline-flex; align-items:center; gap:10px; font-family:Montserrat, Poppins, sans-serif; font-weight:800; font-size:clamp(36px, 6vw, 72px); letter-spacing:1px; margin:0 0 10px}
+.brand__logo{height:clamp(28px, 4.5vw, 44px); width:auto; border-radius:8px; background:transparent; border:1px solid var(--border); box-shadow:0 6px 18px rgba(122,92,255,0.25)}
 .tagline{margin:6px 0; color:var(--muted); font-size:clamp(14px, 2.4vw, 18px)}
 .tagline--main{color:#dfe7ff}
 .hero__actions{margin-top:22px}
@@ -61,7 +59,7 @@ body{
 .card ul{list-style:none; padding:0; margin:0 0 16px}
 .card li{display:flex; align-items:center; gap:8px; margin:8px 0; color:var(--muted)}
 .card li::before{content:""; flex:0 0 8px; height:8px; border-radius:999px; background:linear-gradient(90deg, #7a5cff, #00f5ff)}
-.card.featured{background:linear-gradient(180deg, rgba(123,92,255,0.10), rgba(0,0,0,0)) , var(--panel); box-shadow:0 8px 40px rgba(122,92,255,0.25)}
+.card.featured{box-shadow:0 8px 40px rgba(122,92,255,0.25)}
 .card .btn{width:100%}
 
 .btn{--btnPad:12px; --btnRadius:12px; position:relative; display:inline-flex; justify-content:center; align-items:center; gap:10px; padding:var(--btnPad) 18px; font-weight:700; letter-spacing:0.3px; border-radius:var(--btnRadius); border:1px solid var(--border); color:#f0f6ff; text-decoration:none; cursor:pointer; background:rgba(255,255,255,0.02)}
