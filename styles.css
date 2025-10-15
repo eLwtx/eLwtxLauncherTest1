@@ -35,7 +35,7 @@ body{
 .hero__glow{position:absolute; inset:0; pointer-events:none; background:conic-gradient(from 0deg, rgba(255,0,76,0.08), rgba(255,153,0,0.08), rgba(255,230,0,0.08), rgba(38,255,0,0.08), rgba(0,245,255,0.08), rgba(122,92,255,0.08), rgba(255,0,230,0.08), rgba(255,0,76,0.08)); filter:blur(60px); mask:radial-gradient(60% 60% at 50% 10%, #000 40%, transparent 70%)}
 .hero__inner{position:relative; z-index:1; text-align:center}
 .hero__logo{display:flex; justify-content:center; margin-bottom:10px}
-.logo{height:clamp(56px, 8vw, 84px); width:auto; border-radius:12px; background:rgba(255,255,255,0.02); border:1px solid var(--border); box-shadow:0 10px 30px rgba(122,92,255,0.25)}
+.logo{height:clamp(56px, 8vw, 84px); width:auto; border-radius:12px; background:transparent; border:1px solid var(--border); box-shadow:0 10px 30px rgba(122,92,255,0.25)}
 .brand{font-family:Montserrat, Poppins, sans-serif; font-weight:800; font-size:clamp(36px, 6vw, 72px); letter-spacing:1px; margin:0 0 10px}
 .brand__orb{display:inline-block; width:0.6em; height:0.6em; border-radius:999px; margin-left:0.2em; background:conic-gradient(from 0deg, #ff004c, #f90, #ffe600, #26ff00, #00f5ff, #7a5cff, #ff00e6, #ff004c); animation:spin var(--rgb-speed) linear infinite}
 .tagline{margin:6px 0; color:var(--muted); font-size:clamp(14px, 2.4vw, 18px)}
@@ -55,7 +55,8 @@ body{
   background-position:0 0, 0 0; 
   animation:borderFlow var(--rgb-speed) linear infinite}
 .card::before{content:none}
-.card::after{content:""; position:absolute; inset:-6px; border-radius:calc(var(--radius) + 10px); background:linear-gradient(90deg, #ff004c, #f90, #ffe600, #26ff00, #00f5ff, #7a5cff, #ff00e6, #ff004c); background-size:200% 100%; filter:blur(18px); opacity:.26; animation:borderFlow var(--rgb-speed) linear infinite, glowPulse 3s ease-in-out infinite; pointer-events:none}
+.card::after{content:""; position:absolute; inset:-10px; border-radius:calc(var(--radius) + 14px); padding:8px; background:linear-gradient(90deg, #ff004c, #f90, #ffe600, #26ff00, #00f5ff, #7a5cff, #ff00e6, #ff004c); background-size:200% 100%; filter:blur(20px); opacity:.18; animation:borderFlow var(--rgb-speed) linear infinite, glowPulse 3s ease-in-out infinite; pointer-events:none; 
+  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude}
 .card h3{margin:0 0 8px; font-weight:700; letter-spacing:0.3px}
 .card .price{font-size:26px; font-weight:800; margin:0 0 12px}
 .card ul{list-style:none; padding:0; margin:0 0 16px}
@@ -80,7 +81,8 @@ body{
   background-position:0 0, 0 0; 
   animation:borderFlow var(--rgb-speed) linear infinite, glowPulse 3s ease-in-out infinite}
 .discord-cta__inner::before{content:none !important}
-.discord-cta__inner::after{content:""; position:absolute; inset:-6px; border-radius:calc(var(--radius) + 10px); background:linear-gradient(90deg, #ff004c, #f90, #ffe600, #26ff00, #00f5ff, #7a5cff, #ff00e6, #ff004c); background-size:200% 100%; filter:blur(18px); opacity:.22; animation:borderFlow var(--rgb-speed) linear infinite, glowPulse 3s ease-in-out infinite; pointer-events:none}
+.discord-cta__inner::after{content:""; position:absolute; inset:-10px; border-radius:calc(var(--radius) + 14px); padding:8px; background:linear-gradient(90deg, #ff004c, #f90, #ffe600, #26ff00, #00f5ff, #7a5cff, #ff00e6, #ff004c); background-size:200% 100%; filter:blur(20px); opacity:.16; animation:borderFlow var(--rgb-speed) linear infinite, glowPulse 3s ease-in-out infinite; pointer-events:none; 
+  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude}
 .discord-cta__title{margin:0 0 4px; font-weight:800}
 .discord-cta__desc{margin:0; color:var(--muted)}
 
