@@ -1,7 +1,8 @@
 {
   "site": {
     "title": "WENTRA.LUA — RGB Landing",
-    "favicon": "favicon.ico"
+    "favicon": "logo.svg",
+    "logo": "logo.svg"
   },
   "brand": {
     "name": "WENTRA.LUA",

@@ -1,6 +1,6 @@
 (function(){
   const defaultConfig = {
-    site: { title: "WENTRA — RGB Landing", favicon: "favicon.ico" },
+    site: { title: "WENTRA — RGB Landing", favicon: "logo.svg", logo: "logo.svg" },
     brand: {
       name: "WENTRA.LUA",
       taglineMain: "75'den fazla özellik ile piyasada rakipsiz!",
@@ -34,10 +34,31 @@
     document.documentElement.style.setProperty("--rgb-speed", `${Math.max(3000, Number(speed))}ms`);
   }
 
+  function inferMime(path){
+    try{
+      const ext = String(path).split(".").pop().toLowerCase();
+      if(ext === "svg") return "image/svg+xml";
+      if(ext === "png") return "image/png";
+      if(ext === "jpg" || ext === "jpeg") return "image/jpeg";
+      return "image/x-icon";
+    }catch{ return "image/x-icon"; }
+  }
+
   function setFavicon(src){
     if(!src) return;
     const link = document.getElementById("faviconLink");
-    if(link) link.href = src;
+    if(link){
+      link.href = src;
+      link.type = inferMime(src);
+    }
+  }
+
+  function setLogo(src, altText){
+    const img = document.getElementById("siteLogo");
+    if(img && src){
+      img.src = src;
+      img.alt = altText || "Logo";
+    }
   }
 
   function text(el, value){ if(el) el.textContent = value; }
@@ -88,8 +109,11 @@
     setFavicon(cfg.site && cfg.site.favicon);
     setTheme(cfg.theme);
 
-    // Brand & taglines
-    text(document.getElementById("brandName"), cfg.brand?.name || defaultConfig.brand.name);
+    // Brand, logo & taglines
+    const brandName = cfg.brand?.name || defaultConfig.brand.name;
+    text(document.getElementById("brandName"), brandName);
+    const logoSrc = (cfg.site && (cfg.site.logo || cfg.site.favicon)) || defaultConfig.site.logo || defaultConfig.site.favicon;
+    setLogo(logoSrc, brandName + " logo");
     text(document.getElementById("taglineMain"), cfg.brand?.taglineMain || defaultConfig.brand.taglineMain);
     text(document.getElementById("taglineAlt"), cfg.brand?.taglineAlt || defaultConfig.brand.taglineAlt);
 
