@@ -49,7 +49,7 @@ body{
 @media (max-width: 740px){.cards{grid-template-columns:repeat(1, minmax(0,1fr))}}
 
 .card{position:relative; background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:20px; overflow:hidden}
-.card::before{content:""; position:absolute; inset:-1px; border-radius:calc(var(--radius) + 2px); padding:1px; background:conic-gradient(from 0deg, #ff004c, #f90, #ffe600, #26ff00, #00f5ff, #7a5cff, #ff00e6, #ff004c); -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; animation:spin var(--rgb-speed) linear infinite; opacity:.65}
+.card::before{content:""; position:absolute; inset:-1px; border-radius:calc(var(--radius) + 2px); padding:1px; background:linear-gradient(90deg, #ff004c, #f90, #ffe600, #26ff00, #00f5ff, #7a5cff, #ff00e6, #ff004c); background-size:200% 100%; -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; animation:slide var(--rgb-speed) linear infinite; opacity:.8}
 .card h3{margin:0 0 8px; font-weight:700; letter-spacing:0.3px}
 .card .price{font-size:26px; font-weight:800; margin:0 0 12px}
 .card ul{list-style:none; padding:0; margin:0 0 16px}
