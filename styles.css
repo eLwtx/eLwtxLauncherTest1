@@ -48,15 +48,14 @@ body{
 @media (max-width: 1100px){.cards{grid-template-columns:repeat(3, minmax(0,1fr))}}
 @media (max-width: 740px){.cards{grid-template-columns:repeat(1, minmax(0,1fr))}}
 
-.card{position:relative; border:2px solid transparent; border-radius:var(--radius); padding:20px; overflow:visible; background:
+.card{position:relative; border:1px solid transparent; border-radius:var(--radius); padding:20px; overflow:hidden; background:
   linear-gradient(var(--panel), var(--panel)) padding-box,
   linear-gradient(90deg, #ff004c, #f90, #ffe600, #26ff00, #00f5ff, #7a5cff, #ff00e6, #ff004c) border-box; 
   background-size:auto, 200% 100%;
   background-position:0 0, 0 0; 
   animation:borderFlow var(--rgb-speed) linear infinite}
 .card::before{content:none}
-.card::after{content:""; position:absolute; inset:-10px; border-radius:calc(var(--radius) + 14px); padding:8px; background:linear-gradient(90deg, #ff004c, #f90, #ffe600, #26ff00, #00f5ff, #7a5cff, #ff00e6, #ff004c); background-size:200% 100%; filter:blur(20px); opacity:.18; animation:borderFlow var(--rgb-speed) linear infinite, glowPulse 3s ease-in-out infinite; pointer-events:none; 
-  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude}
+.card::after{content:none !important}
 .card h3{margin:0 0 8px; font-weight:700; letter-spacing:0.3px}
 .card .price{font-size:26px; font-weight:800; margin:0 0 12px}
 .card ul{list-style:none; padding:0; margin:0 0 16px}
@@ -74,15 +73,14 @@ body{
 .note{margin-top:10px; color:var(--muted); font-size:13px}
 
 .discord-cta{padding:28px 0 44px}
-.discord-cta__inner{display:flex; align-items:center; justify-content:space-between; gap:16px; border:2px solid transparent; border-radius:var(--radius); padding:18px 20px; position:relative; overflow:visible; background:
+.discord-cta__inner{display:flex; align-items:center; justify-content:space-between; gap:16px; border:1px solid transparent; border-radius:var(--radius); padding:18px 20px; position:relative; overflow:hidden; background:
   linear-gradient(var(--panel), var(--panel)) padding-box,
   linear-gradient(90deg, #ff004c, #f90, #ffe600, #26ff00, #00f5ff, #7a5cff, #ff00e6, #ff004c) border-box; 
   background-size:auto, 200% 100%;
   background-position:0 0, 0 0; 
   animation:borderFlow var(--rgb-speed) linear infinite, glowPulse 3s ease-in-out infinite}
 .discord-cta__inner::before{content:none !important}
-.discord-cta__inner::after{content:""; position:absolute; inset:-10px; border-radius:calc(var(--radius) + 14px); padding:8px; background:linear-gradient(90deg, #ff004c, #f90, #ffe600, #26ff00, #00f5ff, #7a5cff, #ff00e6, #ff004c); background-size:200% 100%; filter:blur(20px); opacity:.16; animation:borderFlow var(--rgb-speed) linear infinite, glowPulse 3s ease-in-out infinite; pointer-events:none; 
-  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude}
+.discord-cta__inner::after{content:none !important}
 .discord-cta__title{margin:0 0 4px; font-weight:800}
 .discord-cta__desc{margin:0; color:var(--muted)}
 
