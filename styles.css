@@ -1,0 +1,78 @@
+:root{
+  --bg: #070a12;
+  --panel: rgba(13,17,28,0.65);
+  --text: #e7ecf3;
+  --muted: #9aa3b2;
+  --border: rgba(255,255,255,0.06);
+  --radius: 16px;
+  --rgb-speed: 12s; /* JS ile ayarlanır */
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji";
+  color:var(--text);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(75,0,130,0.15), transparent 60%),
+    radial-gradient(900px 500px at 100% 0%, rgba(0,128,255,0.12), transparent 60%),
+    radial-gradient(1200px 800px at 20% 100%, rgba(0,255,170,0.10), transparent 60%),
+    #05070d;
+  background-attachment: fixed;
+}
+
+.container{width:min(1120px, 92%); margin-inline:auto}
+
+.topbar{position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(6px); background:rgba(6,9,16,0.6); border-bottom:1px solid var(--border)}
+.topbar__row{display:flex; align-items:center; justify-content:space-between; min-height:56px}
+.topbar .payment{font-size:14px; color:var(--muted)}
+.topbar .payment strong{color:var(--text)}
+.discord{display:inline-flex; gap:.5rem; align-items:center; color:#cfd8ff; text-decoration:none; font-weight:600}
+.topbar__rgb{height:2px; width:100%; background:linear-gradient(90deg, #ff004c, #f90, #ffe600, #26ff00, #00f5ff, #7a5cff, #ff00e6, #ff004c); background-size:200% 100%; animation:slide var(--rgb-speed) linear infinite}
+
+.hero{position:relative; padding:80px 0 40px}
+.hero__glow{position:absolute; inset:0; pointer-events:none; background:conic-gradient(from 0deg, rgba(255,0,76,0.08), rgba(255,153,0,0.08), rgba(255,230,0,0.08), rgba(38,255,0,0.08), rgba(0,245,255,0.08), rgba(122,92,255,0.08), rgba(255,0,230,0.08), rgba(255,0,76,0.08)); filter:blur(60px); mask:radial-gradient(60% 60% at 50% 10%, #000 40%, transparent 70%)}
+.hero__inner{position:relative; z-index:1; text-align:center}
+.brand{font-family:Montserrat, Poppins, sans-serif; font-weight:800; font-size:clamp(36px, 6vw, 72px); letter-spacing:1px; margin:0 0 10px}
+.brand__orb{display:inline-block; width:0.6em; height:0.6em; border-radius:999px; margin-left:0.2em; background:conic-gradient(from 0deg, #ff004c, #f90, #ffe600, #26ff00, #00f5ff, #7a5cff, #ff00e6, #ff004c); animation:spin var(--rgb-speed) linear infinite}
+.tagline{margin:6px 0; color:var(--muted); font-size:clamp(14px, 2.4vw, 18px)}
+.tagline--main{color:#dfe7ff}
+.hero__actions{margin-top:22px}
+
+.section-title{font-family:Montserrat, Poppins, sans-serif; font-weight:800; letter-spacing:0.5px; font-size:clamp(22px, 3.2vw, 32px); margin:10px 0 22px}
+
+.cards{display:grid; grid-template-columns:repeat(5, minmax(0,1fr)); gap:18px}
+@media (max-width: 1100px){.cards{grid-template-columns:repeat(3, minmax(0,1fr))}}
+@media (max-width: 740px){.cards{grid-template-columns:repeat(1, minmax(0,1fr))}}
+
+.card{position:relative; background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:20px; overflow:hidden}
+.card::before{content:""; position:absolute; inset:-1px; border-radius:calc(var(--radius) + 2px); padding:1px; background:conic-gradient(from 0deg, #ff004c, #f90, #ffe600, #26ff00, #00f5ff, #7a5cff, #ff00e6, #ff004c); -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; animation:spin var(--rgb-speed) linear infinite; opacity:.65}
+.card h3{margin:0 0 8px; font-weight:700; letter-spacing:0.3px}
+.card .price{font-size:26px; font-weight:800; margin:0 0 12px}
+.card ul{list-style:none; padding:0; margin:0 0 16px}
+.card li{display:flex; align-items:center; gap:8px; margin:8px 0; color:var(--muted)}
+.card li::before{content:""; flex:0 0 8px; height:8px; border-radius:999px; background:linear-gradient(90deg, #7a5cff, #00f5ff)}
+.card.featured{background:linear-gradient(180deg, rgba(123,92,255,0.10), rgba(0,0,0,0)) , var(--panel); box-shadow:0 8px 40px rgba(122,92,255,0.25)}
+.card .btn{width:100%}
+
+.btn{--btnPad:12px; --btnRadius:12px; position:relative; display:inline-flex; justify-content:center; align-items:center; gap:10px; padding:var(--btnPad) 18px; font-weight:700; letter-spacing:0.3px; border-radius:var(--btnRadius); border:1px solid var(--border); color:#f0f6ff; text-decoration:none; cursor:pointer; background:rgba(255,255,255,0.02)}
+.btn::before{content:""; position:absolute; inset:-1px; border-radius:calc(var(--btnRadius) + 2px); padding:1px; background:linear-gradient(90deg, #ff004c, #f90, #ffe600, #26ff00, #00f5ff, #7a5cff, #ff00e6, #ff004c); -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; animation:slide var(--rgb-speed) linear infinite; opacity:.9}
+.btn--primary{background:linear-gradient(180deg, rgba(0,255,170,0.10), rgba(0,0,0,0)); border-color:rgba(0,255,170,0.25)}
+.btn--outline{background:transparent}
+.btn:hover{filter:brightness(1.08)}
+
+.note{margin-top:10px; color:var(--muted); font-size:13px}
+
+.discord-cta{padding:28px 0 44px}
+.discord-cta__inner{display:flex; align-items:center; justify-content:space-between; gap:16px; background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:18px 20px; position:relative; overflow:hidden}
+.discord-cta__inner::before{content:""; position:absolute; inset:-1px; border-radius:calc(var(--radius) + 2px); padding:1px; background:conic-gradient(from 0deg, #ff004c, #f90, #ffe600, #26ff00, #00f5ff, #7a5cff, #ff00e6, #ff004c); -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; animation:spin var(--rgb-speed) linear infinite; opacity:.5}
+.discord-cta__title{margin:0 0 4px; font-weight:800}
+.discord-cta__desc{margin:0; color:var(--muted)}
+
+.footer{padding:26px 0; border-top:1px solid var(--border); background:rgba(6,9,16,0.5); position:relative; overflow:hidden}
+.footer__row{display:flex; align-items:center; justify-content:space-between}
+.footer__rgb{position:absolute; inset:0; background:linear-gradient(90deg, #ff004c, #f90, #ffe600, #26ff00, #00f5ff, #7a5cff, #ff00e6, #ff004c); filter:blur(30px); opacity:0.06; animation:slide var(--rgb-speed) linear infinite}
+
+@keyframes spin{to{transform:rotate(1turn)}}
+@keyframes slide{to{background-position:200% 0}}

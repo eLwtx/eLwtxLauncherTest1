@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WENTRA — RGB Landing</title>
+  <meta name="description" content="RGB temalı ürün sayfası. Hepsi tek klasörde, config ile yönetilebilir." />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link id="faviconLink" rel="icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar__row">
+      <div class="payment">Ödeme Yöntemleri: <strong id="paymentMethods">Yükleniyor…</strong></div>
+      <a id="discordTop" class="discord" href="#" target="_blank" rel="noopener">Discord</a>
+    </div>
+    <div class="topbar__rgb"></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <h1 class="brand">
+          <span id="brandName">WENTRA</span>
+          <span class="brand__orb" aria-hidden="true"></span>
+        </h1>
+        <p id="taglineMain" class="tagline tagline--main">75'den fazla özellik ile piyasada rakipsiz!</p>
+        <p id="taglineAlt" class="tagline tagline--alt">Bir babadır bizim için.</p>
+        <div class="hero__actions">
+          <a id="discordCta" class="btn btn--primary" href="#" target="_blank" rel="noopener">Discord’a Katıl</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing">
+      <div class="container">
+        <h2 class="section-title">Lisans Seçenekleri</h2>
+        <div id="pricingCards" class="cards" aria-live="polite"></div>
+        <p class="note">Satın Al butonları sizi Discord’a yönlendirir.</p>
+      </div>
+    </section>
+
+    <section class="discord-cta">
+      <div class="container discord-cta__inner">
+        <div>
+          <h3 class="discord-cta__title">Topluluğumuza katılın</h3>
+          <p class="discord-cta__desc">Güncellemeler, duyurular ve destek için Discord’a gelin.</p>
+        </div>
+        <a id="discordBottom" class="btn btn--outline" href="#" target="_blank" rel="noopener">Discord’a Git</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__row">
+      <p id="footerText">© <span id="footerBrand">WENTRA</span> — <span id="footerYear"></span></p>
+      <div class="footer__rgb" aria-hidden="true"></div>
+    </div>
+  </footer>
+
+  <noscript>
+    Bu sayfa dinamik içerik için JavaScript kullanır. Lütfen tarayıcınızda JavaScript’i etkinleştirin.
+  </noscript>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+{
+  "site": {
+    "title": "WENTRA.LUA — RGB Landing",
+    "favicon": "favicon.ico"
+  },
+  "brand": {
+    "name": "WENTRA.LUA",
+    "taglineMain": "75'den fazla özellik ile piyasada rakipsiz!",
+    "taglineAlt": "Bir babadır bizim için."
+  },
+  "discordInvite": "https://discord.gg/wentrashop",
+  "payments": ["PAPARA", "IBAN", "EPIN", "ITEMSATIS"],
+  "pricing": [
+    {
+      "name": "1 Hafta Lisans",
+      "price": "800₺",
+      "features": ["7 gün tam kullanım hakkı", "Güncellemeler ve destek dahil", "Hızlı kurulum"],
+      "featured": false
+    },
+    {
+      "name": "1 Ay Lisans",
+      "price": "1350₺",
+      "features": ["30 gün sınırsız erişim", "Güncellemeler ve destek dahil", "Performans odaklı"],
+      "featured": false
+    },
+    {
+      "name": "2 Ay Lisans",
+      "price": "2250₺",
+      "features": ["60 gün sınırsız erişim", "Güncellemeler ve destek dahil", "Özelleştirilebilir ayarlar"],
+      "featured": false
+    },
+    {
+      "name": "3 Ay Lisans",
+      "price": "3250₺",
+      "features": ["90 gün sınırsız erişim", "Güncellemeler ve destek dahil", "Öncelikli destek"],
+      "featured": false
+    },
+    {
+      "name": "Sınırsız Lisans",
+      "price": "4500₺",
+      "features": ["Ömür boyu erişim", "Güncellemeler ve destek dahil", "Tek sefer ödeme"],
+      "featured": true
+    }
+  ],
+  "theme": {
+    "rgbSpeedMs": 12000
+  }
+}
